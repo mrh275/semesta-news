@@ -8,10 +8,29 @@
     <title>Semesta New</title>
 
     <link rel="stylesheet" href="./assets/css/app.css">
+    <script>
+        function toggleDarkMode() {
+            const docElement = document.documentElement;
+            if (!docElement.classList.contains("dark")) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        }
+    </script>
 </head>
 
-<body>
-    New Semesta
+<body class="bg-white dark:bg-slate-900">
+    <header class="w-full">
+        <div class="flex flex-col items-center xl:items-center brand-wrapper xl:flex-row">
+            <div class="inline-block brand-logo">
+                <img src="./img/logo-big.png" alt="Logo Brand" class="inline-block py-4 xl:ml-10 w-14">
+            </div>
+            <div class="inline-block brand-text">
+                <h3 class="mb-3 text-2xl font-semibold text-center text-black xl:ml-4 xl:mb-0 xl:text-start">SMA NEGERI 1 RAWAMERTA</h3>
+            </div>
+        </div>
+    </header>
 </body>
 
 </html>
