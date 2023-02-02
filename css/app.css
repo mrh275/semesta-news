@@ -90,7 +90,7 @@ body {
         @apply text-[#0099ff] xl:text-white;
     }
     .drop-menu-1 {
-        @apply scale-y-0 hidden py-2 relative origin-top mb-2 whitespace-nowrap xl:translate-x-0 transition duration-200 ease-in-out translate-x-3 xl:bg-[#0099ff] xl:absolute;
+        @apply scale-y-0 hidden xl:block py-2 relative origin-top mb-2 whitespace-nowrap xl:translate-x-0 transition duration-200 ease-in-out translate-x-3 xl:bg-[#0099ff] xl:absolute;
     }
     .drop-menu-1 .nav-link {
         @apply inline-block py-1;
