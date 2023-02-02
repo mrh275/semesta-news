@@ -13,40 +13,40 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body class="bg-white dark:bg-slate-900">
+<body class="transition duration-200 bg-white dark:bg-gray-800">
     <header class="hidden w-full xl:block">
-        <div class="flex flex-col items-center xl:items-center brand-wrapper xl:flex-row">
-            <div class="inline-block brand-logo">
-                <img src="./img/logo-big.png" alt="Logo Brand" class="inline-block py-4 xl:ml-10 w-14">
+        <div class="brand-wrapper">
+            <div class="brand-logo">
+                <img src="./img/logo-big.png" alt="Logo Brand" class="logo-img">
             </div>
-            <div class="inline-block brand-text">
-                <h3 class="mb-3 text-2xl font-semibold text-center text-black xl:ml-4 xl:mb-0 xl:text-start">SMA NEGERI 1 RAWAMERTA</h3>
+            <div class="brand-text">
+                <h3 class="brand-name">SMA NEGERI 1 RAWAMERTA</h3>
             </div>
         </div>
     </header>
-    <nav class="navbar w-full p-0 absolute items-center h-12 bg-[#0099ff] flex justify-between">
+    <nav class="navbar">
         <div class="ml-6 xl:hidden">
-            <a href="#" class="text-2xl text-white normal-case btn btn-ghost">Semesta</a>
+            <a href="#" class="navbar-brand">Semesta</a>
         </div>
-        <div class="flex items-center mr-4 xl:hidden">
-            <button class="relative flex items-center justify-center overflow-hidden bg-[#00aaff] dark:bg-gray-900 w-8 h-8 rounded-full dark-mode transition duration-200 ease-in-out mr-2" onclick="toggleDarkMode()">
-                <i class='absolute transition-all duration-200 ease-in-out text-amber-500 bx bxs-sun bx-xs'></i>
-                <i class='absolute text-white transition-all duration-200 ease-in-out translate-x-9 bx bxs-moon bx-xs'></i>
+        <div class="mobile-toolbar">
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                <i class='light-mode bx bxs-sun bx-xs'></i>
+                <i class='dark-mode bx bxs-moon bx-xs translate-x-9'></i>
             </button>
-            <button class="active:bg-[#00aaff] flex items-center">
+            <button class="toggle-menu" onclick="toggleMenu()">
                 <i class='text-white bx bx-menu bx-md'></i>
             </button>
         </div>
-        <div class="mobileNav hidden fixed top-0 w-[70%] h-screen nav-menu bg-gray-200 dark:bg-base-100 dark:text-white pt-4 flex-col items-start text-base-100 transition duration-200 ease-in-out">
+        <div class="-translate-x-full mobileNav">
             <div class="mx-auto">
-                <div class="text-center brand-logo">
-                    <img src="./img/logo-big.png" alt="Logo Brand" class="inline-block w-10 mx-auto xl:ml-10">
+                <div class="mobile-brand-logo">
+                    <img src="./img/logo-big.png" alt="Logo Brand" class="mobile-logo-img">
                 </div>
-                <div class="brand-text">
-                    <h3 class="my-3 text-lg font-semibold text-center">SMA NEGERI 1 RAWAMERTA</h3>
+                <div class="mobile-brand-text">
+                    <h3 class="mobile-brand-name">SMA NEGERI 1 RAWAMERTA</h3>
                 </div>
             </div>
-            <ul class="hidden mx-5 nav-menu">
+            <ul class="mx-5 nav-menu">
                 <li class="nav-list">
                     <a href="#" class="nav-link">Home</a>
                 </li>
@@ -55,7 +55,7 @@
                 </li>
                 <li class="nav-list dropdown">
                     <a href="#" class="nav-link">Category</a>
-                    <i class='text-[0.6rem] bx bxs-down-arrow'></i>
+                    <i class='dropdown-caret bx bxs-down-arrow'></i>
                     <ul class="drop-menu-1">
                         <li class="nav-list">
                             <a href="#" class="nav-link">Dropdown 1</a>
@@ -70,7 +70,7 @@
                 </li>
                 <li class="nav-list dropdown">
                     <a href="#" class="nav-link">Gallery</a>
-                    <i class='text-[0.6rem] bx bxs-down-arrow'></i>
+                    <i class='dropdown-caret bx bxs-down-arrow'></i>
                     <ul class="drop-menu-1">
                         <li class="nav-list">
                             <a href="#" class="nav-link">Dropdown 2</a>
@@ -90,6 +90,7 @@
         </div>
     </nav>
     <script>
+        /* Dark Mode Toggle */
         function toggleDarkMode() {
             const docElement = document.documentElement;
             const btn = document.querySelector('button.dark-mode');
@@ -105,12 +106,23 @@
                 document.documentElement.classList.remove('dark');
             }
         }
+        /* End Dark Mode Toggle */
+
+        /* Mobile Menu Toggle */
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('div.mobileNav');
+            mobileMenu.classList.toggle('-translate-x-full')
+        }
+        /* End Mobile Menu Toggle */
+
+        /* Dropdown Toggle */
         const dropdownList = document.querySelectorAll('.dropdown');
         dropdownList.forEach(function (item) {
             item.addEventListener('click', function () {
-                console.log(item);
+                item.classList.toggle('show');
             });
         });
+        /* End Drowdown Toggle */
     </script>
 </body>
 

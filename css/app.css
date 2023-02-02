@@ -9,16 +9,73 @@ body {
 @tailwind utilities;
 
 @layer components {
+    .brand-wrapper {
+        @apply flex flex-col items-center xl:items-center xl:flex-row;
+    }
+    .brand-logo {
+        @apply inline-block;
+    }
+    .logo-img {
+        @apply inline-block py-4 xl:ml-10 w-14;
+    }
+    .brand-text {
+        @apply inline-block;
+    }
+    .brand-name {
+        @apply mb-3 text-2xl font-semibold text-center text-black xl:ml-4 xl:mb-0 xl:text-start;
+    }
+    .navbar {
+        @apply w-full p-0 absolute items-center h-12 bg-[#0099ff] flex justify-between;
+    }
+    .navbar-brand {
+        @apply text-2xl text-white;
+    }
+    .mobile-toolbar {
+        @apply flex items-center mr-4 xl:hidden;
+    }
+    .dark-mode-toggle {
+        @apply relative flex items-center justify-center overflow-hidden bg-[#00aaff] dark:bg-gray-800 w-8 h-8 rounded-full transition duration-200 ease-in-out mr-2;
+    }
+    .light-mode {
+        @apply absolute transition-all duration-200 ease-in-out text-amber-500;
+    }
+    .dark-mode {
+        @apply absolute text-white transition-all duration-200 ease-in-out;
+    }
+    .toggle-menu {
+        @apply active:bg-[#00aaff] flex items-center;
+    }
+    .mobileNav {
+        @apply fixed top-0 w-[70%] h-screen bg-gray-200 dark:bg-gray-700 dark:text-white pt-4 flex-col items-start transition duration-200 ease-in-out;
+    }
+    .mobile-brand-logo {
+        @apply flex justify-center;
+    }
+    .mobile-logo-img {
+        @apply inline-block w-10 mx-auto xl:ml-10;
+    }
+    .mobile-brand-text {
+        @apply flex justify-center w-full;
+    }
+    .mobile-brand-name {
+        @apply my-3 text-lg font-semibold text-center;
+    }
+    .nav-list {
+        @apply overflow-hidden
+    }
     .nav-link {
-        @apply hover:text-[#0099ff] transition duration-200 ease-in-out font-semibold;
+        @apply hover:text-[#0099ff] font-semibold;
+    }
+    .dropdown-caret {
+        @apply text-[0.6rem];
     }
     .dropdown.show > a,.dropdown.show > i {
         @apply text-[#0099ff];
     }
     .drop-menu-1 {
-        @apply invisible hidden mb-2 transition duration-200 ease-in-out translate-x-3 opacity-0;
+        @apply invisible hidden h-0 mb-2 transition duration-200 ease-in-out translate-x-3 opacity-0;
     }
     .dropdown.show > .drop-menu-1 {
-        @apply visible block opacity-100;
+        @apply visible block h-auto transition duration-200 ease-in-out opacity-100;
     }
 }
