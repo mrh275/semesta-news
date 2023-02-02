@@ -8,20 +8,13 @@
     <title>Semesta New</title>
 
     <link rel="stylesheet" href="./assets/css/app.css">
-    <script>
-        function toggleDarkMode() {
-            const docElement = document.documentElement;
-            if (!docElement.classList.contains("dark")) {
-                document.documentElement.classList.add('dark')
-            } else {
-                document.documentElement.classList.remove('dark')
-            }
-        }
-    </script>
+
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="bg-white dark:bg-slate-900">
-    <header class="w-full">
+    <header class="hidden w-full xl:block">
         <div class="flex flex-col items-center xl:items-center brand-wrapper xl:flex-row">
             <div class="inline-block brand-logo">
                 <img src="./img/logo-big.png" alt="Logo Brand" class="inline-block py-4 xl:ml-10 w-14">
@@ -31,6 +24,51 @@
             </div>
         </div>
     </header>
+    <nav class="navbar p-0 relative bg-[#0099ff]">
+        <div class="flex-1 xl:hidden">
+            <a href="#" class="text-2xl text-white normal-case btn btn-ghost">Semesta</a>
+        </div>
+        <div class="flex-none xl:hidden">
+            <button class="relative overflow-hidden btn btn-info btn-circle dark-mode" onclick="toggleDarkMode()">
+                <i class='absolute transition-all duration-200 ease-in-out text-amber-500 bx bxs-sun bx-sm'></i>
+                <i class='absolute text-white transition-all duration-200 ease-in-out translate-x-9 bx bxs-moon bx-sm'></i>
+            </button>
+            <button class="btn btn-square btn-ghost">
+                <i class='text-white bx bx-menu bx-md'></i>
+            </button>
+        </div>
+        <div class="fixed top-0 w-[70%] h-screen nav-menu bg-gray-200 pt-4 flex-col items-start text-base-100">
+            <div class="flex flex-col items-center xl:items-center brand-wrapper xl:flex-row">
+                <div class="inline-block brand-logo">
+                    <img src="./img/logo-big.png" alt="Logo Brand" class="inline-block w-10 py-4 xl:ml-10">
+                </div>
+                <div class="inline-block brand-text">
+                    <h3 class="mb-3 text-lg font-semibold text-center text-black xl:ml-4 xl:mb-0 xl:text-start">SMA NEGERI 1 RAWAMERTA</h3>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        function toggleDarkMode() {
+            const docElement = document.documentElement;
+            const btn = document.querySelector('button.dark-mode');
+            const light = document.querySelector('i.bxs-sun');
+            const moon = document.querySelector('i.bxs-moon');
+            if (!docElement.classList.contains("dark")) {
+                btn.classList.remove('btn-info')
+                btn.classList.add('btn-info-content')
+                light.classList.add('-translate-x-10')
+                moon.classList.remove('translate-x-9')
+                document.documentElement.classList.add('dark');
+            } else {
+                btn.classList.remove('btn-info-content')
+                btn.classList.add('btn-info')
+                light.classList.remove('-translate-x-10')
+                moon.classList.add('translate-x-9')
+                document.documentElement.classList.remove('dark');
+            }
+        }
+    </script>
 </body>
 
 </html>
