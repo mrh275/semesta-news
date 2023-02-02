@@ -46,7 +46,7 @@ body {
         @apply active:bg-[#00aaff] flex items-center;
     }
     .mobileNav {
-        @apply fixed top-0 w-[70%] h-screen bg-gray-200 dark:bg-gray-700 dark:text-white pt-4 flex-col items-start transition duration-200 ease-in-out;
+        @apply fixed xl:hidden top-0 w-[70%] h-screen bg-gray-200 dark:bg-gray-700 dark:text-white pt-4 flex-col items-start transition duration-200 ease-in-out;
     }
     .mobile-brand-logo {
         @apply flex justify-center;
@@ -60,22 +60,42 @@ body {
     .mobile-brand-name {
         @apply my-3 text-lg font-semibold text-center;
     }
+    .nav-menu {
+        @apply hidden xl:flex xl:justify-start xl:text-white xl:px-6;
+    }
+    .mobileNav > .nav-menu {
+        @apply block;
+    }
     .nav-list {
-        @apply overflow-hidden
+        @apply relative xl:mx-2;
+    }
+    @media (min-width:1280px) {
+        .nav-link::after{
+            @apply w-full scale-x-0 origin-bottom-left transition duration-300 content-[''] border-b-2 border-b-white absolute bottom-0 left-0;
+        }
+        .nav-link:hover::after{
+            @apply origin-bottom-left scale-x-100;
+        }
     }
     .nav-link {
-        @apply hover:text-[#0099ff] font-semibold;
+        @apply hover:text-[#0099ff] xl:hover:text-white font-semibold;
     }
     .dropdown-caret {
         @apply text-[0.6rem];
     }
+    .dropdown.show > .nav-link::after {
+        @apply origin-bottom-left scale-x-100;
+    }
     .dropdown.show > a,.dropdown.show > i {
-        @apply text-[#0099ff];
+        @apply text-[#0099ff] xl:text-white;
     }
     .drop-menu-1 {
-        @apply invisible hidden h-0 mb-2 transition duration-200 ease-in-out translate-x-3 opacity-0;
+        @apply scale-y-0 hidden py-2 relative origin-top mb-2 whitespace-nowrap xl:translate-x-0 transition duration-200 ease-in-out translate-x-3 xl:bg-[#0099ff] xl:absolute;
     }
-    .dropdown.show > .drop-menu-1 {
-        @apply visible block h-auto transition duration-200 ease-in-out opacity-100;
+    .drop-menu-1 .nav-link {
+        @apply inline-block py-1;
+    }
+    .dropdown.show ~ .drop-menu-1 {
+        @apply block scale-y-100;
     }
 }
