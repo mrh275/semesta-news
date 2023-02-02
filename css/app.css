@@ -7,3 +7,18 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .nav-link {
+        @apply hover:text-[#0099ff] transition duration-200 ease-in-out font-semibold;
+    }
+    .dropdown.show > a,.dropdown.show > i {
+        @apply text-[#0099ff];
+    }
+    .drop-menu-1 {
+        @apply invisible hidden mb-2 transition duration-200 ease-in-out translate-x-3 opacity-0;
+    }
+    .dropdown.show > .drop-menu-1 {
+        @apply visible block opacity-100;
+    }
+}
