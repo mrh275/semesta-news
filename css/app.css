@@ -80,14 +80,14 @@ body {
     .dropdown-caret {
         @apply text-[0.6rem];
     }
-    .dropdown.show > .nav-link::after {
+    .dropdown.show::after {
         @apply origin-bottom-left scale-x-100;
     }
     .dropdown.show > a,.dropdown.show > i {
         @apply text-[#0099ff] xl:text-white;
     }
     .drop-menu-1 {
-        @apply relative hidden py-2 mb-2 transition duration-200 ease-in-out origin-top translate-x-3 xl:invisible xl:opacity-0 xl:block whitespace-nowrap xl:translate-x-0 xl:bg-gray-700 xl:absolute;
+        @apply relative hidden py-2 mb-2 transition duration-200 ease-in-out origin-top translate-x-3 xl:invisible xl:opacity-0 xl:block whitespace-nowrap xl:translate-x-0 xl:bg-gray-500 xl:absolute;
     }
     .drop-menu-1 .nav-link {
         @apply inline-block py-1;
@@ -102,6 +102,6 @@ body {
         @apply w-full px-2 py-1 mt-2 whitespace-normal transition duration-300 ease-in-out origin-center scale-x-0 rounded-md outline-none xl:mt-0 xl:mx-2 xl:origin-right;
     }
     .search-btn {
-        @apply flex items-center justify-center p-2 text-white transition duration-200 bg-gray-500 rounded-md active:bg-gray-600;
+        @apply flex items-center justify-center p-2 text-white transition duration-200 bg-gray-500 rounded-md hover:bg-gray-600;
     }
 }
