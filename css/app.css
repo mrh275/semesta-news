@@ -25,7 +25,7 @@ body {
         @apply mb-3 text-2xl font-semibold text-center text-black xl:ml-4 xl:mb-0 xl:text-start;
     }
     .navbar {
-        @apply absolute flex items-center justify-between w-full h-auto p-0 py-2 transition duration-200 bg-gray-500 dark:bg-gray-700 xl:py-0;
+        @apply absolute flex items-center justify-between w-full h-auto p-0 py-2 transition duration-200 bg-gray-500 xl:relative dark:bg-gray-700 xl:py-0;
     }
     .navbar-brand {
         @apply text-2xl text-white;
@@ -103,5 +103,12 @@ body {
     }
     .search-btn {
         @apply flex items-center justify-center p-2 text-white transition duration-200 bg-gray-500 rounded-md hover:bg-gray-600;
+    }
+    /* Main Content */
+    .main-content-wrapper {
+        @apply mx-8 my-6;
+    }
+    .carousel-wrapper {
+        @apply w-[60%];
     }
 }

@@ -11,16 +11,19 @@
 
     <!-- Icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Carousel -->
+    <link rel="stylesheet" href="./assets/plugins/swiperjs/swiper-bundle.min.css">
+
 </head>
 
 <body class="transition duration-200 bg-white dark:bg-gray-800">
     <header class="hidden w-full xl:block">
         <div class="brand-wrapper">
             <div class="brand-logo">
-                <img src="./img/logo-big.png" alt="Logo Brand" class="logo-img">
+                <img src="./img/logo-big.png" alt="Logo Brand" class="invisible logo-img">
             </div>
             <div class="brand-text">
-                <h3 class="brand-name">SMA NEGERI 1 RAWAMERTA</h3>
+                <h3 class="brand-name">SEMESTA NEWS</h3>
             </div>
         </div>
     </header>
@@ -93,6 +96,41 @@
             </form>
         </div>
     </nav>
+
+    <!-- Headlines -->
+    <main class="main-content-wrapper">
+        <section class="carousel-wrapper">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="./img/image-1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/image-2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/image-3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/image-4.jpg" alt="">
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+    </main>
+    <!-- End Headlines -->
+
+    <script src="./assets/plugins/swiperjs/swiper-bundle.min.js"></script>
     <script>
         /* Dark Mode Toggle */
         function toggleDarkMode() {
@@ -135,6 +173,31 @@
             searchInput.classList.toggle('scale-x-100');
         });
         /* End Search Input Animation */
+
+        /* Splide */
+        document.addEventListener('DOMContentLoaded', function () {
+            var splide = new Splide('.splide');
+            splide.mount();
+        });
+        /* End Splide */
+
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
     </script>
 </body>
 
