@@ -37,8 +37,8 @@
                 <i class='text-white bx bx-menu bx-md'></i>
             </button>
         </div>
-        <div class="-translate-x-full mobileNav">
-            <div class="mx-auto xl:hidden">
+        <div class="-translate-x-full xl:translate-x-0 mobileNav">
+            <div class="order-1 mx-auto xl:hidden">
                 <div class="mobile-brand-logo">
                     <img src="./img/logo-big.png" alt="Logo Brand" class="mobile-logo-img">
                 </div>
@@ -87,48 +87,11 @@
                     <a href="#" class="nav-link">Contact Me</a>
                 </li>
             </ul>
+            <form action="#" method="get" class="search-wrapper">
+                <input type="text" name="search" class="search-input">
+                <button class="search-btn" type="button"><i class='bx bx-search-alt-2'></i></button>
+            </form>
         </div>
-        <ul class="nav-menu">
-            <li class="nav-list">
-                <a href="#" class="nav-link">Home</a>
-            </li>
-            <li class="nav-list">
-                <a href="#" class="nav-link">About Us</a>
-            </li>
-            <li class="nav-list">
-                <a href="#" class="nav-link dropdown">Category</a>
-                <i class='dropdown-caret bx bxs-down-arrow'></i>
-                <ul class="drop-menu-1">
-                    <li class="nav-list">
-                        <a href="#" class="nav-link">Dropdown 1</a>
-                    </li>
-                    <li class="nav-list">
-                        <a href="#" class="nav-link">Dropdown 1</a>
-                    </li>
-                    <li class="nav-list">
-                        <a href="#" class="nav-link">Dropdown 1</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-list">
-                <a href="#" class="nav-link dropdown">Gallery</a>
-                <i class='dropdown-caret bx bxs-down-arrow'></i>
-                <ul class="drop-menu-1">
-                    <li class="nav-list">
-                        <a href="#" class="nav-link">Dropdown 2</a>
-                    </li>
-                    <li class="nav-list">
-                        <a href="#" class="nav-link">Dropdown 2</a>
-                    </li>
-                    <li class="nav-list">
-                        <a href="#" class="nav-link">Dropdown 2</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-list">
-                <a href="#" class="nav-link">Contact Me</a>
-            </li>
-        </ul>
     </nav>
     <script>
         /* Dark Mode Toggle */
@@ -164,6 +127,14 @@
             });
         });
         /* End Drowdown Toggle */
+
+        /* Search Input Animation */
+        const searchBtn = document.querySelector('button.search-btn');
+        const searchInput = document.querySelector('input.search-input');
+        searchBtn.addEventListener('click', function () {
+            searchInput.classList.toggle('scale-x-100');
+        });
+        /* End Search Input Animation */
     </script>
 </body>
 

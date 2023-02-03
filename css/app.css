@@ -25,7 +25,7 @@ body {
         @apply mb-3 text-2xl font-semibold text-center text-black xl:ml-4 xl:mb-0 xl:text-start;
     }
     .navbar {
-        @apply w-full p-0 absolute items-center h-12 bg-[#0099ff] flex justify-between;
+        @apply absolute flex items-center justify-between w-full h-auto p-0 py-2 transition duration-200 bg-gray-500 dark:bg-gray-700 xl:py-0;
     }
     .navbar-brand {
         @apply text-2xl text-white;
@@ -34,19 +34,19 @@ body {
         @apply flex items-center mr-4 xl:hidden;
     }
     .dark-mode-toggle {
-        @apply relative flex items-center justify-center overflow-hidden bg-[#00aaff] dark:bg-gray-800 w-8 h-8 rounded-full transition duration-200 ease-in-out mr-2;
+        @apply relative flex items-center justify-center w-8 h-8 mr-2 overflow-hidden transition duration-200 ease-in-out bg-gray-600 rounded-full dark:bg-gray-800;
     }
     .light-mode {
-        @apply absolute transition-all duration-200 ease-in-out text-amber-500;
+        @apply absolute text-yellow-500 transition-all duration-200 ease-in-out;
     }
     .dark-mode {
         @apply absolute text-white transition-all duration-200 ease-in-out;
     }
     .toggle-menu {
-        @apply active:bg-[#00aaff] flex items-center;
+        @apply flex items-center active:bg-gray-500 active:bg-opacity-60;
     }
     .mobileNav {
-        @apply fixed xl:hidden top-0 w-[70%] h-screen bg-gray-200 dark:bg-gray-700 dark:text-white pt-4 flex-col items-start transition duration-200 ease-in-out;
+        @apply fixed xl:relative flex xl:flex-row xl:justify-between top-0 w-[70%] xl:w-full xl:h-auto h-screen bg-gray-300 xl:bg-transparent xl:dark:bg-transparent dark:bg-gray-700 dark:text-white pt-4 flex-col items-start xl:items-center xl:py-0 transition duration-200 ease-in-out xl:my-3 overflow-y-scroll xl:overflow-y-visible;
     }
     .mobile-brand-logo {
         @apply flex justify-center;
@@ -61,10 +61,7 @@ body {
         @apply my-3 text-lg font-semibold text-center;
     }
     .nav-menu {
-        @apply hidden xl:flex xl:justify-start xl:text-white xl:px-6;
-    }
-    .mobileNav > .nav-menu {
-        @apply block;
+        @apply order-3 block xl:order-2 xl:flex xl:justify-start xl:items-center xl:text-white xl:px-6;
     }
     .nav-list {
         @apply relative xl:mx-2;
@@ -90,12 +87,21 @@ body {
         @apply text-[#0099ff] xl:text-white;
     }
     .drop-menu-1 {
-        @apply scale-y-0 hidden xl:block py-2 relative origin-top mb-2 whitespace-nowrap xl:translate-x-0 transition duration-200 ease-in-out translate-x-3 xl:bg-[#0099ff] xl:absolute;
+        @apply relative hidden py-2 mb-2 transition duration-200 ease-in-out origin-top translate-x-3 xl:invisible xl:opacity-0 xl:block whitespace-nowrap xl:translate-x-0 xl:bg-gray-700 xl:absolute;
     }
     .drop-menu-1 .nav-link {
         @apply inline-block py-1;
     }
     .dropdown.show ~ .drop-menu-1 {
-        @apply block scale-y-100;
+        @apply visible block translate-y-0 opacity-100;
+    }
+    .search-wrapper {
+        @apply flex flex-col-reverse items-center justify-center order-2 px-4 mx-auto mb-4 xl:px-0 xl:mx-0 xl:mr-6 xl:order-3 xl:flex-row xl:mb-0;
+    }
+    .search-input {
+        @apply w-full px-2 py-1 mt-2 whitespace-normal transition duration-300 ease-in-out origin-center scale-x-0 rounded-md outline-none xl:mt-0 xl:mx-2 xl:origin-right;
+    }
+    .search-btn {
+        @apply flex items-center justify-center p-2 text-white transition duration-200 bg-gray-500 rounded-md active:bg-gray-600;
     }
 }
